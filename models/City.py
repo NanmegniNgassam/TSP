@@ -34,3 +34,28 @@ def generateCities(number_of_cities: int) -> list[Point]:
             cities.append(city)
 
     return cities
+
+
+# process the distance's matrix from the cities
+def processDistanceMatrix(cities: list[Point], accuracy: int) -> list[list[float]]:
+    """
+    generate the distance matrix, knowing a group of cities
+
+    Args:
+        cities (list[Point]): a group of cities
+        accuracy (int): the accuracy of distance from the floating' point of view
+
+    Returns:
+        list[list[float]]: a matrix of interralated distances between each city and the others 
+    """
+    # initialize the matrix
+    distances_matrix: list[list[float|int]] = np.zeros((cities.__len__(), cities.__len__()))
+
+    # Go through the cities and sequentially pick one of them
+    for i,city in enumerate(cities):
+        # With a selected city, process the distance between it and the others cities
+        for j, neighbourCity in enumerate(cities):
+            distances_matrix[i][j] = round(city.calculateDistanceTo(neighbourCity), accuracy)
+            distances_matrix[j][i] = distances_matrix[i][j]
+
+    return distances_matrix

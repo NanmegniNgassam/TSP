@@ -1,6 +1,8 @@
-from models.City import generateCities
+from models.City import generateCities, processDistanceMatrix
 
 # launch the main function
-cities = generateCities(20)
+cities = generateCities(12)
 
-print(cities)
+distances_matrix = processDistanceMatrix(cities, 0)
+
+print(distances_matrix)
