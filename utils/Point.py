@@ -1,3 +1,9 @@
+"""
+Gilles NGASSAM
+26/12/2024
+"""
+
+# Librairies importation
 import random as rd
 
 class Point:
@@ -33,6 +39,7 @@ class Point:
             equality (boolean): Whether or not the current instance and second point are identical 
         """
         return self.calculateDistanceTo(secondPoint) == 0
+
 
 # Generate an instance of Point with random coordinates 
 def generateRandomPoint(min: float, max: float, floating_point: int) -> Point:
