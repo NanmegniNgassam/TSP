@@ -3,6 +3,6 @@ from models.City import generateCities, processDistanceMatrix
 # launch the main function
 cities = generateCities(8)
 
-distances_matrix = processDistanceMatrix(cities, 2)
+distances_matrix = processDistanceMatrix(cities, 0)
 
 print(distances_matrix)

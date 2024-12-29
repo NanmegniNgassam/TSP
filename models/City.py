@@ -51,6 +51,5 @@ def processDistanceMatrix(cities: list[Point], accuracy: int) -> list[list[float
         # With a selected city, process the distance between it and the others cities
         for j, neighbourCity in enumerate(cities):
             distances_matrix[i][j] = round(city.calculateDistanceTo(neighbourCity), accuracy)
-            distances_matrix[j][i] = distances_matrix[i][j]
 
     return distances_matrix
