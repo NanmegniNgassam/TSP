@@ -24,7 +24,7 @@ def process_tour_total_distance(plan: list[Point]) -> float:
     for i in range(plan.__len__()):
         total_distance += plan[i].calculateDistanceTo(plan[(i+1)%plan.__len__()])
 
-    return total_distance
+    return round(total_distance, 2)
 
 # Generate a new plan from the previous one by swapping two cities
 def generate_derivated_plan(plan: list[Point]) -> list[Point]:
